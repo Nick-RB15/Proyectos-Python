@@ -1,0 +1,676 @@
+/* General */
+* {
+    margin: 0; /* Elimina el margen alrededor de los elementos */
+    padding: 0; /* Elimina el relleno alrededor de los elementos */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho y alto del elemento */
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Establece la fuente del cuerpo */
+    line-height: 1.6; /* Establece la altura de la línea */
+    background-color: #f4f5f7; /* Establece el color de fondo del cuerpo */
+    color: #333; /* Establece el color del texto del cuerpo */
+}
+
+/* Header */
+header {
+    background-color: #35495e; /* Establece el color de fondo del header */
+    color: #ffffff; /* Establece el color del texto del header */
+    padding: 1rem 2rem; /* Establece el relleno del header */
+    display: flex; /* Establece el display del header como flex */
+    justify-content: space-between; /* Justifica el contenido del header */
+    align-items: center; /* Alinea los elementos del header */
+    position: fixed; /* Establece la posición del header como fija */
+    width: 100%; /* Establece el ancho del header */
+    top: 0; /* Establece la posición superior del header */
+    z-index: 1000; /* Establece el índice z del header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Establece la sombra del header */
+}
+
+.user-info {
+    text-align: right; /* Alinea el texto de la información del usuario a la derecha */
+}
+
+.user-name {
+    font-size: 1.2rem; /* Establece el tamaño de la fuente del nombre del usuario */
+    font-weight: bold; /* Establece el peso de la fuente del nombre del usuario */
+    display: block; /* Establece el display del nombre del usuario como bloque */
+}
+
+.user-role {
+    font-size: 0.9rem; /* Establece el tamaño de la fuente del rol del usuario */
+    opacity: 0.8; /* Establece la opacidad del rol del usuario */
+}
+
+/* Menú de navegación */
+.menu-toggle {
+    background: none; /* Elimina el fondo del botón del menú */
+    border: none; /* Elimina el borde del botón del menú */
+    color: #fff; /* Establece el color del texto del botón del menú */
+    font-size: 1.5rem; /* Establece el tamaño de la fuente del botón del menú */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón del menú */
+    padding: 0.5rem; /* Establece el relleno del botón del menú */
+    transition: color 0.3s ease; /* Establece la transición del color del botón del menú */
+}
+
+.menu-toggle:hover {
+    color: #1abc9c; /* Cambia el color del botón del menú al pasar sobre él */
+}
+
+nav {
+    background-color: #2c3e50; /* Establece el color de fondo del menú */
+    position: fixed; /* Establece la posición del menú como fija */
+    top: 60px; /* Establece la posición superior del menú */
+    left: -250px; /* Establece la posición izquierda del menú */
+    width: 250px; /* Establece el ancho del menú */
+    height: 100vh; /* Establece la altura del menú */
+    transition: left 0.3s ease; /* Establece la transición de la posición izquierda del menú */
+    z-index: 999; /* Establece el índice z del menú */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Establece la sombra del menú */
+}
+
+nav.show {
+    left: 0; /* Cambia la posición izquierda del menú a 0 */
+}
+
+nav ul {
+    list-style: none; /* Elimina el estilo de lista del menú */
+    padding: 1rem; /* Establece el relleno del menú */
+    display: flex; /* Establece el display del menú como flex */
+    flex-direction: column; /* Establece la dirección del menú como columna */
+    gap: 10px; /* Establece el espacio entre los elementos del menú */
+}
+
+nav a {
+    color: #ecf0f1; /* Establece el color del texto de los enlaces del menú */
+    text-decoration: none; /* Elimina la decoración del texto de los enlaces del menú */
+    display: block; /* Establece el display de los enlaces del menú como bloque */
+    padding: 0.8rem; /* Establece el relleno de los enlaces del menú */
+    font-size: 1rem; /* Establece el tamaño de la fuente de los enlaces del menú */
+    border-radius: 5px; /* Establece el radio del borde de los enlaces del menú */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Establece la transición del color de fondo y del texto de los enlaces del menú */
+}
+
+nav a:hover {
+    background-color: #1abc9c; /* Cambia el color de fondo de los enlaces del menú al pasar sobre ellos */
+    color: #ffffff; /* Cambia el color del texto de los enlaces del menú al pasar sobre ellos */
+}
+
+nav i {
+    margin-right: 10px; /* Establece el margen derecho de los iconos del menú */
+}
+
+/* Contenido principal */
+.main-content {
+    margin-top: 80px; /* Establece el margen superior del contenido principal */
+    padding: 20px; /* Establece el relleno del contenido principal */
+    background-color: #ffffff; /* Establece el color de fondo del contenido principal */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Establece la sombra del contenido principal */
+    border-radius: 10px; /* Establece el radio del borde del contenido principal */
+}
+
+/* Perfil */
+.profile-container {
+    max-width: 1000px; /* Establece el ancho máximo del contenedor del perfil */
+    margin: 100px auto 20px; /* Establece los márgenes del contenedor del perfil */
+    background: #555; /* Establece el color de fondo del contenedor del perfil */
+    border-radius: 15px; /* Establece el radio del borde del contenedor del perfil */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Establece la sombra del contenedor del perfil */
+    overflow: hidden; /* Oculta el contenido que sobrepasa el contenedor del perfil */
+}
+
+.profile-header {
+    position: relative; /* Establece la posición del encabezado del perfil como relativa */
+    height: 250px; /* Establece la altura del encabezado del perfil */
+    background: linear-gradient(to bottom right, #1abc9c, #16a085); /* Establece el fondo del encabezado del perfil */
+}
+
+.cover-photo {
+    width: 100%; /* Establece el ancho de la foto de portada */
+    height: 250px; /* Establece la altura de la foto de portada */
+    object-fit: cover; /* Ajusta la foto de portada al contenedor */
+    opacity: 0.8; /* Establece la opacidad de la foto de portada */
+}
+
+.profile-photo {
+    width: 150px; /* Establece el ancho de la foto del perfil */
+    height: 150px; /* Establece la altura de la foto del perfil */
+    border-radius: 50%; /* Establece el radio del borde de la foto del perfil */
+    border: 5px solid #ffffff; /* Establece el borde de la foto del perfil */
+    position: absolute; /* Establece la posición de la foto del perfil como absoluta */
+    bottom: -75px; /* Establece la posición inferior de la foto del perfil */
+    left: 30px; /* Establece la posición izquierda de la foto del perfil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Establece la sombra de la foto del perfil */
+}
+
+
+h1.profile {
+    color: #333; /* Establece el color del título del perfil */
+    font-size: 2rem; /* Establece el tamaño de la fuente del título del perfil */
+    margin-bottom: 10px; /* Establece el margen inferior del título del perfil */
+}
+
+.title {
+    color: #7f8c8d; /* Establece el color del título */
+    font-size: 1.2rem; /* Establece el tamaño de la fuente del título */
+    margin-bottom: 20px; /* Establece el margen inferior del título */
+}
+
+.bio {
+    margin-bottom: 30px; /* Establece el margen inferior de la biografía */
+}
+
+/* Estilos de párrafos */
+p {
+    margin-bottom: 1.5rem; /* Establece el margen inferior de los párrafos */
+    line-height: 1.8; /* Establece la altura de la línea de los párrafos */
+}
+
+.skills, .contact-info {
+    margin-bottom: 30px; /* Establece el margen inferior de las habilidades y la información de contacto */
+}
+
+.skills ul {
+    list-style: none; /* Elimina el estilo de lista de las habilidades */
+    display: flex; /* Establece el display de las habilidades como flex */
+    flex-wrap: wrap; /* Permite que las habilidades se envuelvan */
+    gap: 15px; /* Establece el espacio entre las habilidades */
+    justify-content: center; /* Justifica el contenido de las habilidades */
+}
+
+.skills .skill {
+    background-color: #ecf0f1; /* Establece el color de fondo de las habilidades */
+    padding: 10px 15px; /* Establece el relleno de las habilidades */
+    border-radius: 10px; /* Establece el radio del borde de las habilidades */
+    font-size: 0.9rem; /* Establece el tamaño de la fuente de las habilidades */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Establece la sombra de las habilidades */
+}
+
+.skills .skill:hover {
+    background-color: #1abc9c; /* Cambia el color de fondo de las habilidades al pasar sobre ellas */
+    color: #fff; /* Cambia el color del texto de las habilidades al pasar sobre ellas */
+    transition: all 0.3s ease; /* Establece la transición de las habilidades */
+}
+
+.contact-info {
+    display: flex; /* Establece el display de la información de contacto como flex */
+    flex-wrap: wrap; /* Permite que la información de contacto se envuelva */
+    gap: 20px; /* Establece el espacio entre la información de contacto */
+    justify-content: center; /* Justifica el contenido de la información de contacto */
+}
+
+.contact-info .contact {
+    background-color: #ecf0f1; /* Establece el color de fondo de la información de contacto */
+    padding: 15px; /* Establece el relleno de la información de contacto */
+    border-radius: 10px; /* Establece el radio del borde de la información de contacto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Establece la sombra de la información de contacto */
+    text-align: center; /* Alinea el texto de la información de contacto */
+}
+
+.contact-info .contact h3 {
+    color: #333; /* Establece el color del título de la información de contacto */
+    font-size: 1.1rem; /* Establece el tamaño de la fuente del título de la información de contacto */
+    margin-bottom: 10px; /* Establece el margen inferior del título de la información de contacto */
+}
+
+/* Iconos de redes sociales */
+.social-icons {
+    display: flex; /* Establece el display de los iconos de redes sociales como flex */
+    justify-content: center; /* Justifica el contenido de los iconos de redes sociales */
+    gap: 15px; /* Establece el espacio entre los iconos de redes sociales */
+    margin-top: 20px; /* Establece el margen superior de los iconos de redes sociales */
+}
+
+.social-icons a {
+    color: #7f8c8d; /* Establece el color de los iconos de redes sociales */
+    text-decoration: none; /* Elimina la decoración del texto de los iconos de redes sociales */
+    font-size: 1.5rem; /* Establece el tamaño de la fuente de los iconos de redes sociales */
+    transition: color 0.3s ease; /* Establece la transición del color de los iconos de redes sociales */
+}
+
+.social-icons a:hover {
+    color: #1abc9c; /* Cambia el color de los iconos de redes sociales al pasar sobre ellos */
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Establece el ancho del contenedor */
+        margin-top: 10px; /* Establece el margen superior del contenedor */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia la dirección del menú a columna */
+    }
+
+    .main-content {
+        margin-top: 100px; /* Establece el margen superior del contenido principal */
+    }
+
+    .profile-container {
+        margin-top: 120px; /* Establece el margen superior del contenedor del perfil */
+    }
+}
+
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-info, .contact-actions {
+    background-color: #ecf0f1; /* Fondo acorde al diseño original */
+    border: 1px solid #bdc3c7; /* Borde suave en tonos grises */
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3, .contact-actions h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #2c3e50; /* Color del texto acorde al esquema de diseño */
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #34495e; /* Color de texto oscuro del esquema original */
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: #1abc9c; /* Iconos con el color primario del diseño */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7; /* Bordes grises suaves */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f4f5f7; /* Fondo claro acorde al diseño */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1abc9c; /* Resalta los campos activos con el color primario */
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+.contact-form button {
+    background-color: #1abc9c; /* Botón en color primario */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #16a085; /* Color más oscuro al pasar el mouse */
+}
+
+.resultado-mensaje {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #2c3e50; /* Texto oscuro acorde al diseño */
+}
+/* Contenedor principal para dividir la información */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la sección de información solicitada */
+.info-requested, .info-sent {
+    flex: 1 1 calc(50% - 20px); /* Ambos ocupan el 50% del ancho */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos en ambas secciones */
+.info-requested h2, .info-sent h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 5px;
+}
+
+/* Estilo para los párrafos y campos dentro de las secciones */
+.info-requested p, .info-sent p {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.info-requested button, .info-sent button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.info-requested button:hover, .info-sent button:hover {
+    background-color: #16a085;
+}
+
+/* Asegura que ambas partes se apilen en pantallas pequeñas */
+@media (max-width: 768px) {
+    .info-requested, .info-sent {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilo para el contenido principal */
+.main-content {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Bienvenida */
+.welcome-message {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.welcome-message h1 {
+    font-size: 2.5rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
+/* Estilo de la cuadrícula de servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta de servicio */
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.demo-button {
+    padding: 0.5rem 1rem;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.demo-button:hover {
+    background-color: #1abc9c;
+}
+
+/* Estilo del área de demostración */
+
+
+
+
+.demo-container {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.demo-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.demo-content {
+    font-size: 1rem;
+    color: #555;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .demo-button {
+        width: 100%;
+    }
+}
+.description-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description-content div {
+    color: #555;
+}
+
+/* Estilo para el stack tecnológico */
+.tech-stack h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1abc9c;
+}
+
+.tech-stack ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-stack ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack ul li i {
+    color: #1abc9c;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Estilo para la descripción del proyecto */
+.project-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.project-description ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.project-description ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description ul li i {
+    color: #1abc9c;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .description-content {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .welcome-message h1.description {
+        font-size: 2rem;
+    }
+}
+/* Profile Container */
+.profile-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Profile Info */
+.profile-info {
+    text-align: center;
+    padding: 2rem;
+}
+
+.profile-info h1.profile {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.profile-info .title {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.bio p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills and Languages Section */
+.skills, .languages {
+    margin: 1.5rem 0;
+    padding: 0 2rem;
+}
+
+.skills h3, .languages h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2c3e50;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+}
+
+.skills ul, .languages ul {
+    list-style-type: none;
+}
+
+.skills li, .languages li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+/* Contact Information */
+.contact-info {
+    padding: 1.5rem 2rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.contact-info p i {
+    color: #3498db;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-info h1.profile {
+        font-size: 1.5rem;
+    }
+
+    .skills h3, .languages h3, .contact-info h3 {
+        font-size: 1.3rem;
+    }
+}
